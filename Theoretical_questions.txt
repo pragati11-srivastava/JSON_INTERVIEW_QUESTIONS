@@ -1,0 +1,430 @@
+JSON Interview Questions
+
+1. What is JSON?
+JSON stands for JavaScript Object Notation but it does not use JavaScript to perform operations, it just uses the JavaScript syntax. It is a light-weighted and language-independent format mainly used to transmit the data between the server and the web app.
+
+2. Explain the structure and format of JSON.
+The JSON format follows the structure of the JavaScript object. It contains the key-value pairs in the form of strings that can be transmitted from server to web app and vice-versa. The values stored in JSON can be retrieved in the same way as the values of JavaScript object are retrieved.
+
+{
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+3. Who created JSON?
+Douglas Crockford was the first man who introduced and created the JSON format first in 2000.
+
+4. What is the extension for the JSON files?
+The JSON files can be created and stored using the .json extension. You can add the data in the form of JSON format using the key-value pairs in the form of strings.
+
+5. What is the reason for using JSON?
+JSON is a light weighted format that is used to transfer the data on the network. The main reason for using JSON is that it provides a very simple and easy way to communicate between the server and the web app by data transmission. It is used as an alternative for the XML format.
+
+6. What are the features of JSON?
+There are different features of JSON as listed below:
+
+It is a light weight format that helps to optimize the performance of the web app.
+It is independent of different programming languages.
+It has a vast support from different programming languages.
+The JSON format is very easy to understand.
+It can represent the complex data structures.
+7. List different data types supported by JSON.
+JSON has a support for the following data-types:
+
+Number
+Boolean
+String
+Array
+Object
+null
+8. How to create a JSON array?
+A JSON array is just like the arrays in the other programming languages that contains a collection of multiple items of different data-types. It can contain value of any data-type supported by JSON.
+
+["value1", 12, true, null]
+9. Is it possible to create function in JSON?
+No, as we know JSON is just a data format and it is used to transfer data on the network. Therefore, we can not write any kind of executable code inside it.
+
+10. How to retrieve the data stored in JSON object?
+You can retrieve or access the values stored in an JSON object in the same way as we access them in JavaScript. The below methods can be used to access the values of JSON object.
+
+Using dot notation
+Using square brackets
+11. Explain the process of accessing JSON object values using dot notation.
+You can follow the below syntax to retrieve values of JSON object using dot notation.
+
+const JSONObj = {
+    "name": "GFG",
+    "est": "2009",
+    "workForce": "200+"
+}
+console.log(JSONObj.name)
+console.log(JSONObj.est)
+console.log(JSONObj.workForce)
+12. Explain the process of accessing JSON object values using square brackets.
+You can follow the below syntax to retrieve values of JSON object using square brackets.
+
+const JSONObj = '{
+    "name": "GFG",
+    "est": "2009",
+    "workForce": "200+"
+}'
+console.log(JSONObj["name"])
+console.log(JSONObj["est"])
+console.log(JSONObj["workForce"])
+13. Explain JSONP and how it is different from JSON?
+JSONP stands for JSON with Padding. It is a method for sending the JSON data with padding to avoid cross domain restrictions. JSONP is different from JSON, because it allows the cross-origin requests.
+
+14. List different browsers that support JSON.
+JSON is supported by all the modern browsers. As we know, JSON follows the JavaScript syntax, hence every browser has built-in support for it. The below browsers support JSON:
+
+Google Chrome
+Mozilla Firefox
+Safari
+Microsoft Edge
+Opera, etc.
+15. Explain the use of JSON.parse() method in JSON.
+The JSON.parse() method is used to parse the JSON data into JavaScript and converts the JSON string into a JavaScript object.
+
+JSON.parse(JSONString, function)
+16. What is the JSON.stringify() method used for?
+The JSON.stringify() method is used to convert the JavaScript object into a JSON string format.
+
+JSON.stringify(JSONString, function, space)
+17. Explain JSON schema.
+JSON schema is a content specification language defined to validate the structure and the format of JSON data or string. It defines the basic structure, format and important constraints of JSON data.
+
+18. How to write JSON in an HTML document?
+You can write or include the JSON data inside and HTML document using a <script> tag with type attribute by passing a value as application/json to it.
+
+<script type="application/json">
+    // JSON data
+</script>
+19. What are the methods used to encode and decode JSON in PHP?
+We can use the below methods to encode and decode JSON in PHP:
+
+json_encode(): This method is used to encode JSON in PHP. It takes the data in PHP array format and converts it into JSON data.
+json_decode(): It is used to decode JSON in PHP. It takes a JSON string as input and returns corres[ponding PHP array.
+20. What is the MIME type for JSON?
+The MIME type for JSON is application/json. You can pass this type as an value to the type attribute inside the script tag to include JSON into your HTML document.
+
+21. What are the benefits of using JSON?
+The below list contains some benefits of using JSON:
+
+It is easy to implement and understand.
+It can be used with any language due to its language independency.
+It’s a very lightweight data interchange format on the network.
+It’s an alternative of XML.
+22. Explain disadvantages of using JSON.
+There are some disadvantages of using JSON:
+
+It does not have any Document Type Definition.
+It is not good for large scale data products.
+There’s no type definition of it.
+It is not safe to use with untrusted services and browsers as it does not have a solid security mechanism.
+It can output a complex data in case of large data set which may be difficult to understand.
+23. What are the applications of JSON?
+JSON can be used in different situations:
+
+It serializes and transmits the structured data over a network connection.
+There are multiple web services and APIs available on the internet that returns the data in JSON format when the data is fetched from them using JavaScript or any other language.
+It transfers the data between the servers and web applications.
+24. List some of the popular libraries for working with JSON in JavaScript.
+Below are some of the popular libraries for working with JSON in JavaScript:
+
+lodash
+underscore.js
+jsonwebtoken, etc.
+25. Differentiate between JSON and XML.
+JSON and XML are the formats used to transfer data over the network. But there are some differences between them as listed in the below table:
+
+JSON
+
+XML
+
+It stands for JavaScript Object Notation.
+
+It stands for Extensible Markup Language.
+
+It doesn’t use any tag.
+
+It uses end tag.
+
+It allows to create arrays.
+
+It does not have arrays.
+
+JSON is simple and easy to read as well as write.
+
+XML is a little complex as compare to JSON.
+
+It does not have a robust and strong security mechanism.
+
+It is much secure than JSON.
+
+26. What are the similarities between JSON and XML?
+There are some similarities between JSON and XML as listed below:
+
+Both of them are used to transmit data to the network connection.
+Both are simple and human-readable.
+They are language independent.
+Both of them supports hierarchical and nested structure i.e. values within values or objects with object.
+They can be fetched by sending requests to the servers.
+27. What is Serialization and Deserialization in JSON?
+Serialization: It is the term refer to the process of transforming and object to the string.
+Deserialization: It is the process of converting a string back into an object.
+28. How to handle JSON parsing errors in JavaScript?
+The JSON parsing errors can be handled using the try/catch block with the parsing statements in JavaScript.
+
+29. Is it possible to create duplicate keys in an JSON object?
+No, JSON does not allow to create duplicate keys in an object. If there’s a duplicate key created in some scenario, then the last occurrence of that key will replace the previous occurrence.
+
+30. Explain JSON web token and its implementation.
+JSON web token or JWT is a self-contained and compact way to transmit the data securely between server and web app in JSON object format. It consist of three parts as the header, the payload, and the signature. All the parts of JWT are encode in base64 format which are concatenated to form a JWT.
+
+31. How to transmit JSON data securely over the internet?
+The JSON data can be securely transmitted over the internet using the HTTPS (Hyper Text Transfer Protocol Secure) protocol. It encrypts the data during its transmission over the internet.
+
+32. What is JSON-LD and how it is different from JSON?
+JSON-LD stands for JSON for Linking Data. It is a lightweight Linked Data format that is designed to integrate with the JSON based APIs that are already existing on he internet. It is different from regular JSON as it involves the additional context and semantics for the better data interoperability.
+
+33. What is the purpose of toJSON() method in JSON?
+The toJSON() method in JSON is used to convert the date returned by the Date constructor in the string format.
+
+dateObj.toJSON();
+34. What are JSON formatter and Validator?
+The JSON formatter and Validators are the tools used to format and validate the JSON data. These tools convert the JSON data into a human-readable format by ensuring its readability, correctness, and adherence to JSON syntax.
+
+35. What are the alternatives of JSON?
+There are some alternatives available for JSON as listed below:
+
+XML (Extensible Markup Language)
+Protocol Buffers (protobuf)
+YAML
+MessagePack
+BSON (Binary JSON)
+CBOR (Concise Binary Object Representation)
+
+
+### Basic Questions
+
+1. **What is JSON?**
+   - JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is primarily used to transmit data between a server and a web application.
+
+2. **What are the key data types supported by JSON?**
+   - JSON supports the following data types:
+     - Strings
+     - Numbers
+     - Objects
+     - Arrays
+     - Booleans (true/false)
+     - Null
+
+3. **How does JSON differ from XML?**
+   - JSON is more lightweight and easier to read/write compared to XML.
+   - JSON uses a key-value pair structure, while XML uses a tree structure with start and end tags.
+   - JSON does not support comments, whereas XML does.
+   - JSON is native to JavaScript, making it easier to parse and generate in JavaScript environments.
+
+4. **How can you parse JSON data in JavaScript?**
+   - JSON data can be parsed using the `JSON.parse()` method. For example:
+     ```javascript
+     let jsonString = '{"name": "John", "age": 30}';
+     let jsonObj = JSON.parse(jsonString);
+     ```
+
+5. **How can you convert a JavaScript object to a JSON string?**
+   - You can use the `JSON.stringify()` method to convert a JavaScript object to a JSON string. For example:
+     ```javascript
+     let jsonObj = {name: "John", age: 30};
+     let jsonString = JSON.stringify(jsonObj);
+     ```
+
+6. **What are some common use cases for JSON?**
+   - Data interchange between a server and a web application.
+   - Configuration files (e.g., package.json in Node.js).
+   - Storing data in NoSQL databases like MongoDB.
+   - APIs responses from web services.
+
+7. **How do you handle comments in JSON?**
+   - JSON does not support comments. If you need to include comments, you would have to handle them outside of the JSON content or use another method to document the JSON structure.
+
+8. **What is the difference between `JSON.parse()` and `eval()`?**
+   - `JSON.parse()` is specifically designed to parse JSON strings safely, ensuring the string is valid JSON.
+   - `eval()` can execute any JavaScript code, making it less secure as it can run malicious scripts if the input is not controlled.
+
+9. **What are JSONP and its use case?**
+   - JSONP (JSON with Padding) is a technique used to overcome cross-domain issues in web browsers by exploiting the `<script>` tag’s ability to load scripts from different origins. JSONP is often used for making cross-domain requests in a way that allows a page to receive JSON data from a server in a different domain.
+
+10. **How do you validate a JSON string?**
+    - You can use a JSON validator or a try-catch block in JavaScript:
+      ```javascript
+      function isValidJson(jsonString) {
+          try {
+              JSON.parse(jsonString);
+              return true;
+          } catch (e) {
+              return false;
+          }
+      }
+      ```
+
+11. **What is the significance of `Content-Type: application/json` in HTTP headers?**
+    - This HTTP header indicates that the body of the request or response is in JSON format. Servers and clients use this header to parse the data correctly.
+
+12. **Can JSON be used for asynchronous data exchange? How?**
+    - Yes, JSON is commonly used for asynchronous data exchange via AJAX (Asynchronous JavaScript and XML) requests in web applications. It allows the browser to exchange data with the server without reloading the page.
+
+### Practical Questions
+
+13. **Given a JSON object, how would you access nested values?**
+    - You can access nested values using dot notation or bracket notation:
+      ```javascript
+      let data = {
+          "user": {
+              "name": "John",
+              "address": {
+                  "city": "New York"
+              }
+          }
+      };
+      let cityName = data.user.address.city; // "New York"
+      ```
+
+14. **How can you modify a value in a JSON object?**
+    - Modify a value by directly assigning a new value to the desired key:
+      ```javascript
+      let data = {"name": "John", "age": 30};
+      data.age = 31; // Modify age
+      ```
+
+15. **How can you handle large JSON data efficiently?**
+    - Use streaming parsers like JSONStream in Node.js.
+    - Utilize pagination to load data in chunks.
+    - Minimize the JSON structure to reduce payload size.
+
+
+
+### More Theoretical JSON Questions
+
+1. **What are the advantages of using JSON over other data interchange formats?**
+   - **Readability**: JSON is easier to read and write compared to XML.
+   - **Lightweight**: JSON has a more compact and lighter structure.
+   - **Native to JavaScript**: JSON is native to JavaScript, making it easy to parse and generate in JavaScript environments.
+   - **Performance**: Parsing JSON is generally faster than parsing XML.
+   - **Interoperability**: JSON is language-independent and supported by most modern programming languages.
+
+2. **What are the limitations of JSON?**
+   - **Lack of Schema**: JSON does not enforce a schema, which can lead to inconsistent data structures.
+   - **No Comments**: JSON does not support comments, making it harder to annotate or document the data structure.
+   - **Limited Data Types**: JSON supports a limited number of data types (strings, numbers, objects, arrays, booleans, null).
+   - **Security**: If not handled correctly, JSON can be vulnerable to injection attacks.
+
+3. **Explain the structure of a JSON object.**
+   - A JSON object is a collection of key-value pairs enclosed in curly braces `{}`. Each key is a string (enclosed in double quotes), and the value can be a string, number, object, array, boolean, or null.
+   - Example:
+     ```json
+     {
+         "name": "John",
+         "age": 30,
+         "isStudent": false,
+         "address": {
+             "city": "New York",
+             "zipcode": "10001"
+         },
+         "courses": ["Math", "Science"]
+     }
+     ```
+
+4. **What are the differences between JSON objects and JSON arrays?**
+   - **JSON Objects**: Represented as key-value pairs enclosed in `{}`. Each key is a string, and the value can be any valid JSON data type.
+     - Example:
+       ```json
+       {
+           "name": "John",
+           "age": 30
+       }
+       ```
+   - **JSON Arrays**: Represented as ordered lists of values enclosed in `[]`. The values can be of any valid JSON data type.
+     - Example:
+       ```json
+       [
+           "Math",
+           "Science",
+           "History"
+       ]
+       ```
+
+5. **How does JSON handle date and time values?**
+   - JSON does not have a built-in data type for dates. Dates are usually represented as strings in a format that can be understood by both the producer and consumer of the JSON data.
+   - Common formats include ISO 8601:
+     ```json
+     {
+         "date": "2024-06-06T12:00:00Z"
+     }
+     ```
+
+6. **What is JSON Schema and what is its purpose?**
+   - JSON Schema is a specification for defining the structure of JSON data. It provides a way to validate JSON data against a predefined schema, ensuring that the data follows the expected format and constraints.
+   - Purpose:
+     - Validate the structure and data types of JSON data.
+     - Define default values, required fields, and constraints.
+     - Document the structure of JSON data for better understanding and maintenance.
+
+7. **What are some common security concerns when working with JSON?**
+   - **Injection Attacks**: Malicious code can be injected if JSON data is not properly sanitized or validated.
+   - **Cross-Site Scripting (XSS)**: JSON data included in web pages without proper escaping can lead to XSS attacks.
+   - **Data Exposure**: Sensitive data can be exposed if JSON data is not properly secured or encrypted during transmission.
+   - **Denial of Service (DoS)**: Large or deeply nested JSON structures can be used to exhaust resources and cause DoS attacks.
+
+8. **How can you ensure the integrity and authenticity of JSON data?**
+   - **Data Encryption**: Use encryption to protect JSON data during transmission.
+   - **Digital Signatures**: Use digital signatures to verify the authenticity and integrity of JSON data.
+   - **Validation**: Use JSON Schema or similar tools to validate the structure and content of JSON data before processing.
+
+9. **What is JSON-LD and how is it used?**
+   - JSON-LD (JSON for Linking Data) is a method of encoding linked data using JSON. It allows the representation of linked data structures, making it easier to integrate data from different sources and provide context to the data.
+   - Used in:
+     - Enhancing SEO by adding structured data to web pages.
+     - Integrating and linking data across different systems and platforms.
+     - Providing machine-readable context to JSON data for better interoperability.
+
+10. **What is the significance of MIME types `application/json` and `application/ld+json`?**
+    - **application/json**: Indicates that the content being transmitted is in JSON format. It is used in HTTP headers to inform the client or server that the data being sent or received is JSON.
+    - **application/ld+json**: Indicates that the content is JSON-LD, a format for linked data using JSON. It is used to provide context to JSON data, making it easier to link and integrate data across different sources.
+
+11. **How can JSON be used in RESTful web services?**
+    - JSON is commonly used in RESTful web services as a format for request and response payloads. It provides a lightweight and easy-to-parse format for exchanging data between the client and server.
+    - Example:
+      - **Request**: Sending data to the server in JSON format.
+        ```json
+        POST /api/users
+        Content-Type: application/json
+        {
+            "name": "John",
+            "age": 30
+        }
+        ```
+      - **Response**: Receiving data from the server in JSON format.
+        ```json
+        {
+            "id": 1,
+            "name": "John",
+            "age": 30
+        }
+        ```
+
+12. **Explain the concept of "serialization" and "deserialization" in the context of JSON.**
+    - **Serialization**: The process of converting an object or data structure into a JSON string. It allows data to be transmitted or stored as JSON.
+      - Example in JavaScript:
+        ```javascript
+        let jsonObj = {name: "John", age: 30};
+        let jsonString = JSON.stringify(jsonObj);
+        ```
+    - **Deserialization**: The process of converting a JSON string back into an object or data structure. It allows JSON data to be parsed and used in applications.
+      - Example in JavaScript:
+        ```javascript
+        let jsonString = '{"name": "John", "age": 30}';
+        let jsonObj = JSON.parse(jsonString);
+        ```
+
+
