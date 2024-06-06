@@ -1,0 +1,217 @@
+
+
+### 1. Parsing JSON
+**Question:** Write a function in JavaScript that takes a JSON string as input and returns the corresponding JavaScript object. If the input is not a valid JSON string, the function should return `null`.
+
+**Answer:**
+```javascript
+function parseJson(jsonString) {
+    try {
+        return JSON.parse(jsonString);
+    } catch (e) {
+        return null;
+    }
+}
+
+// Example usage:
+let jsonString = '{"name": "John", "age": 30}';
+console.log(parseJson(jsonString)); // Output: { name: 'John', age: 30 }
+
+jsonString = '{name: "John", age: 30}'; // Invalid JSON
+console.log(parseJson(jsonString)); // Output: null
+```
+
+### 2. Converting Object to JSON
+**Question:** Write a function that takes a JavaScript object and returns a JSON string.
+
+**Answer:**
+```javascript
+function toJsonString(obj) {
+    return JSON.stringify(obj);
+}
+
+// Example usage:
+let obj = { name: "John", age: 30 };
+console.log(toJsonString(obj)); // Output: '{"name":"John","age":30}'
+```
+
+### 3. Extracting Values
+**Question:** Given a JSON string representing an array of user objects, write a function that extracts and returns an array of usernames.
+
+**Answer:**
+```javascript
+function extractUsernames(jsonString) {
+    try {
+        let users = JSON.parse(jsonString);
+        return users.map(user => user.username);
+    } catch (e) {
+        return [];
+    }
+}
+
+// Example usage:
+let jsonString = '[{"username": "john_doe"}, {"username": "jane_doe"}]';
+console.log(extractUsernames(jsonString)); // Output: ["john_doe", "jane_doe"]
+```
+
+### 4. Deep Copy
+**Question:** Write a function that performs a deep copy of a JavaScript object using JSON methods.
+
+**Answer:**
+```javascript
+function deepCopy(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+
+// Example usage:
+let original = { name: "John", address: { city: "New York" } };
+let copy = deepCopy(original);
+copy.address.city = "Los Angeles";
+console.log(original.address.city); // Output: "New York"
+console.log(copy.address.city); // Output: "Los Angeles"
+```
+
+### 5. Merging JSON Objects
+**Question:** Write a function that merges two JSON objects into one. The function should handle nested objects as well.
+
+**Answer:**
+```javascript
+function mergeObjects(obj1, obj2) {
+    let result = { ...obj1 };
+    for (let key in obj2) {
+        if (obj2.hasOwnProperty(key)) {
+            if (typeof obj2[key] === 'object' && obj2[key] !== null && !Array.isArray(obj2[key])) {
+                result[key] = mergeObjects(result[key] || {}, obj2[key]);
+            } else {
+                result[key] = obj2[key];
+            }
+        }
+    }
+    return result;
+}
+
+// Example usage:
+let obj1 = { a: 1, b: { c: 2 } };
+let obj2 = { b: { d: 3 }, e: 4 };
+let merged = mergeObjects(obj1, obj2);
+console.log(merged); // Output: { a: 1, b: { c: 2, d: 3 }, e: 4 }
+```
+
+### 6. Validating JSON Schema
+**Question:** Write a function that validates a JSON object against a simple schema. The schema should define required fields and their types.
+
+**Answer:**
+```javascript
+function validateJson(json, schema) {
+    for (let key in schema) {
+        if (schema.hasOwnProperty(key)) {
+            if (json[key] === undefined) {
+                return false;
+            }
+            if (typeof json[key] !== schema[key]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+// Example usage:
+let json = { name: "John", age: 30 };
+let schema = { name: "string", age: "number" };
+console.log(validateJson(json, schema)); // Output: true
+
+json = { name: "John", age: "30" };
+console.log(validateJson(json, schema)); // Output: false
+```
+
+### 7. Filtering JSON Array
+**Question:** Write a function that filters a JSON array of objects based on a condition.
+
+**Answer:**
+```javascript
+function filterJsonArray(jsonArray, condition) {
+    return jsonArray.filter(condition);
+}
+
+// Example usage:
+let users = [
+    { name: "John", age: 30 },
+    { name: "Jane", age: 25 },
+    { name: "Jim", age: 35 }
+];
+let adults = filterJsonArray(users, user => user.age >= 30);
+console.log(adults); // Output: [{ name: "John", age: 30 }, { name: "Jim", age: 35 }]
+```
+
+### 8. Finding an Object in a JSON Array
+**Question:** Write a function that finds an object in a JSON array based on a given key-value pair.
+
+**Answer:**
+```javascript
+function findObjectInArray(jsonArray, key, value) {
+    return jsonArray.find(item => item[key] === value);
+}
+
+// Example usage:
+let users = [
+    { name: "John", age: 30 },
+    { name: "Jane", age: 25 },
+    { name: "Jim", age: 35 }
+];
+let user = findObjectInArray(users, 'name', 'Jane');
+console.log(user); // Output: { name: "Jane", age: 25 }
+```
+
+### 9. Aggregating Data from JSON
+**Question:** Write a function that takes a JSON array of objects and returns the sum of a specific numeric field.
+
+**Answer:**
+```javascript
+function sumField(jsonArray, field) {
+    return jsonArray.reduce((sum, item) => sum + item[field], 0);
+}
+
+// Example usage:
+let transactions = [
+    { amount: 100 },
+    { amount: 200 },
+    { amount: 300 }
+];
+let total = sumField(transactions, 'amount');
+console.log(total); // Output: 600
+```
+
+### 10. Converting JSON to CSV
+**Question:** Write a function that converts a JSON array of objects into a CSV string.
+
+**Answer:**
+```javascript
+function jsonToCsv(jsonArray) {
+    if (!jsonArray.length) {
+        return '';
+    }
+
+    const keys = Object.keys(jsonArray[0]);
+    const csv = [
+        keys.join(','), // header row
+        ...jsonArray.map(row => keys.map(key => row[key]).join(',')) // data rows
+    ].join('\n');
+
+    return csv;
+}
+
+// Example usage:
+let data = [
+    { name: "John", age: 30 },
+    { name: "Jane", age: 25 },
+    { name: "Jim", age: 35 }
+];
+let csvString = jsonToCsv(data);
+console.log(csvString);
+// Output:
+// name,age
+// John,30
+// Jane,25
+// Jim,35
+```
