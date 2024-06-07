@@ -1,2 +1,2 @@
 # JSON_INTERVIEW_QUESTIONS
-This repo is for preparation of a json interview questions.
+This repo is for preparation of a AJAX interview questions.

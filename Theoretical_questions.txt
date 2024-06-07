@@ -1,430 +1,288 @@
-JSON Interview Questions
-
-1. What is JSON?
-JSON stands for JavaScript Object Notation but it does not use JavaScript to perform operations, it just uses the JavaScript syntax. It is a light-weighted and language-independent format mainly used to transmit the data between the server and the web app.
-
-2. Explain the structure and format of JSON.
-The JSON format follows the structure of the JavaScript object. It contains the key-value pairs in the form of strings that can be transmitted from server to web app and vice-versa. The values stored in JSON can be retrieved in the same way as the values of JavaScript object are retrieved.
-
-{
-    "key1": "value1",
-    "key2": "value2",
-    "key3": "value3"
-}
-3. Who created JSON?
-Douglas Crockford was the first man who introduced and created the JSON format first in 2000.
-
-4. What is the extension for the JSON files?
-The JSON files can be created and stored using the .json extension. You can add the data in the form of JSON format using the key-value pairs in the form of strings.
-
-5. What is the reason for using JSON?
-JSON is a light weighted format that is used to transfer the data on the network. The main reason for using JSON is that it provides a very simple and easy way to communicate between the server and the web app by data transmission. It is used as an alternative for the XML format.
-
-6. What are the features of JSON?
-There are different features of JSON as listed below:
-
-It is a light weight format that helps to optimize the performance of the web app.
-It is independent of different programming languages.
-It has a vast support from different programming languages.
-The JSON format is very easy to understand.
-It can represent the complex data structures.
-7. List different data types supported by JSON.
-JSON has a support for the following data-types:
-
-Number
-Boolean
-String
-Array
-Object
-null
-8. How to create a JSON array?
-A JSON array is just like the arrays in the other programming languages that contains a collection of multiple items of different data-types. It can contain value of any data-type supported by JSON.
-
-["value1", 12, true, null]
-9. Is it possible to create function in JSON?
-No, as we know JSON is just a data format and it is used to transfer data on the network. Therefore, we can not write any kind of executable code inside it.
-
-10. How to retrieve the data stored in JSON object?
-You can retrieve or access the values stored in an JSON object in the same way as we access them in JavaScript. The below methods can be used to access the values of JSON object.
-
-Using dot notation
-Using square brackets
-11. Explain the process of accessing JSON object values using dot notation.
-You can follow the below syntax to retrieve values of JSON object using dot notation.
-
-const JSONObj = {
-    "name": "GFG",
-    "est": "2009",
-    "workForce": "200+"
-}
-console.log(JSONObj.name)
-console.log(JSONObj.est)
-console.log(JSONObj.workForce)
-12. Explain the process of accessing JSON object values using square brackets.
-You can follow the below syntax to retrieve values of JSON object using square brackets.
-
-const JSONObj = '{
-    "name": "GFG",
-    "est": "2009",
-    "workForce": "200+"
-}'
-console.log(JSONObj["name"])
-console.log(JSONObj["est"])
-console.log(JSONObj["workForce"])
-13. Explain JSONP and how it is different from JSON?
-JSONP stands for JSON with Padding. It is a method for sending the JSON data with padding to avoid cross domain restrictions. JSONP is different from JSON, because it allows the cross-origin requests.
-
-14. List different browsers that support JSON.
-JSON is supported by all the modern browsers. As we know, JSON follows the JavaScript syntax, hence every browser has built-in support for it. The below browsers support JSON:
-
-Google Chrome
-Mozilla Firefox
-Safari
-Microsoft Edge
-Opera, etc.
-15. Explain the use of JSON.parse() method in JSON.
-The JSON.parse() method is used to parse the JSON data into JavaScript and converts the JSON string into a JavaScript object.
-
-JSON.parse(JSONString, function)
-16. What is the JSON.stringify() method used for?
-The JSON.stringify() method is used to convert the JavaScript object into a JSON string format.
-
-JSON.stringify(JSONString, function, space)
-17. Explain JSON schema.
-JSON schema is a content specification language defined to validate the structure and the format of JSON data or string. It defines the basic structure, format and important constraints of JSON data.
-
-18. How to write JSON in an HTML document?
-You can write or include the JSON data inside and HTML document using a <script> tag with type attribute by passing a value as application/json to it.
-
-<script type="application/json">
-    // JSON data
-</script>
-19. What are the methods used to encode and decode JSON in PHP?
-We can use the below methods to encode and decode JSON in PHP:
+Basic Questions
+What is AJAX?
+
+Answer: AJAX stands for Asynchronous JavaScript and XML. It is a set of web development techniques using many web technologies on the client side to create asynchronous web applications. With AJAX, web applications can send and retrieve data from a server asynchronously without interfering with the display and behavior of the existing page.
+How does AJAX work?
+
+Answer: AJAX works by using a combination of:
+A browser built-in XMLHttpRequest object (to request data from a web server).
+JavaScript and HTML DOM (to display or use the data).
+CSS (to style the data).
+The data can be sent in various formats, including XML, JSON, and plain text.
+What are the advantages of using AJAX?
+
+Answer:
+Improved user experience as pages can be updated asynchronously.
+Reduced server traffic and network load since only the necessary data is fetched.
+Increased responsiveness and performance.
+More interactive and dynamic user interfaces.
+Can you explain the difference between synchronous and asynchronous requests?
+
+Answer:
+Synchronous requests block the execution of code. This means the user has to wait for the server to respond before they can continue using the application.
+Asynchronous requests do not block the execution. The user can continue using the application while the request is being processed. Once the response is ready, a callback function handles it.
+Intermediate Questions
+What is the role of XMLHttpRequest in AJAX?
+
+Answer: The XMLHttpRequest object is used to interact with servers. It allows sending and receiving data after a web page has loaded, enabling asynchronous updates.
+Explain how to handle errors in AJAX calls.
+
+Answer: Error handling in AJAX can be done using the onerror event handler of the XMLHttpRequest object, or by checking the status property within the onreadystatechange event handler to detect unsuccessful responses (e.g., status codes 404 or 500).
+What is JSON and how is it used in AJAX?
+
+Answer: JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. In AJAX, JSON is commonly used for data exchange between the client and server because it is faster and more efficient compared to XML.
+How can you cancel an AJAX request?
+
+Answer: An AJAX request can be canceled by calling the abort() method on the XMLHttpRequest object.
+Advanced Questions
+Describe a scenario where you would use AJAX in a web application.
+
+Answer: An example scenario could be a live search feature in a web application where user input is sent to the server on every keystroke to fetch matching results and display them dynamically without reloading the page.
+What are some common security concerns with AJAX and how can they be mitigated?
+
+Answer:
+Cross-Site Scripting (XSS): Ensure proper escaping of output and validate inputs.
+Cross-Site Request Forgery (CSRF): Use tokens to validate requests.
+Exposure of sensitive data: Use HTTPS and validate server responses.
+CORS (Cross-Origin Resource Sharing) issues: Properly configure server to handle CORS policies.
+How do you handle multiple AJAX requests?
+
+Answer: Multiple AJAX requests can be handled using:
+Promise.all() to execute multiple requests in parallel and wait for all of them to complete.
+Async/Await syntax to make code more readable and handle multiple asynchronous operations.
+Chained Promises for sequential execution.
+What is CORS and how does it relate to AJAX?
+
+Answer: CORS (Cross-Origin Resource Sharing) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the resource originated. AJAX requests to different domains require CORS headers to be correctly set on the server to permit the cross-origin requests.
+Practical Questions
+Can you write a simple AJAX call using plain JavaScript?
+
+Answer:
+javascript
+Copy code
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    var response = JSON.parse(xhr.responseText);
+    console.log(response);
+  }
+};
+xhr.send();
+How do you handle JSON data in an AJAX call?
+
+Answer:
+javascript
+Copy code
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    var jsonResponse = JSON.parse(xhr.responseText);
+    console.log(jsonResponse);
+  }
+};
+xhr.send();
+Explain how to use jQuery for making AJAX requests.
+
+Answer:
+javascript
+Copy code
+$.ajax({
+  url: 'https://api.example.com/data',
+  method: 'GET',
+  success: function (response) {
+    console.log(response);
+  },
+  error: function (error) {
+    console.error('Error:', error);
+  }
+});
+
 
-json_encode(): This method is used to encode JSON in PHP. It takes the data in PHP array format and converts it into JSON data.
-json_decode(): It is used to decode JSON in PHP. It takes a JSON string as input and returns corres[ponding PHP array.
-20. What is the MIME type for JSON?
-The MIME type for JSON is application/json. You can pass this type as an value to the type attribute inside the script tag to include JSON into your HTML document.
-
-21. What are the benefits of using JSON?
-The below list contains some benefits of using JSON:
-
-It is easy to implement and understand.
-It can be used with any language due to its language independency.
-It’s a very lightweight data interchange format on the network.
-It’s an alternative of XML.
-22. Explain disadvantages of using JSON.
-There are some disadvantages of using JSON:
-
-It does not have any Document Type Definition.
-It is not good for large scale data products.
-There’s no type definition of it.
-It is not safe to use with untrusted services and browsers as it does not have a solid security mechanism.
-It can output a complex data in case of large data set which may be difficult to understand.
-23. What are the applications of JSON?
-JSON can be used in different situations:
-
-It serializes and transmits the structured data over a network connection.
-There are multiple web services and APIs available on the internet that returns the data in JSON format when the data is fetched from them using JavaScript or any other language.
-It transfers the data between the servers and web applications.
-24. List some of the popular libraries for working with JSON in JavaScript.
-Below are some of the popular libraries for working with JSON in JavaScript:
-
-lodash
-underscore.js
-jsonwebtoken, etc.
-25. Differentiate between JSON and XML.
-JSON and XML are the formats used to transfer data over the network. But there are some differences between them as listed in the below table:
-
-JSON
-
-XML
-
-It stands for JavaScript Object Notation.
-
-It stands for Extensible Markup Language.
-
-It doesn’t use any tag.
-
-It uses end tag.
-
-It allows to create arrays.
-
-It does not have arrays.
-
-JSON is simple and easy to read as well as write.
-
-XML is a little complex as compare to JSON.
-
-It does not have a robust and strong security mechanism.
-
-It is much secure than JSON.
-
-26. What are the similarities between JSON and XML?
-There are some similarities between JSON and XML as listed below:
-
-Both of them are used to transmit data to the network connection.
-Both are simple and human-readable.
-They are language independent.
-Both of them supports hierarchical and nested structure i.e. values within values or objects with object.
-They can be fetched by sending requests to the servers.
-27. What is Serialization and Deserialization in JSON?
-Serialization: It is the term refer to the process of transforming and object to the string.
-Deserialization: It is the process of converting a string back into an object.
-28. How to handle JSON parsing errors in JavaScript?
-The JSON parsing errors can be handled using the try/catch block with the parsing statements in JavaScript.
-
-29. Is it possible to create duplicate keys in an JSON object?
-No, JSON does not allow to create duplicate keys in an object. If there’s a duplicate key created in some scenario, then the last occurrence of that key will replace the previous occurrence.
-
-30. Explain JSON web token and its implementation.
-JSON web token or JWT is a self-contained and compact way to transmit the data securely between server and web app in JSON object format. It consist of three parts as the header, the payload, and the signature. All the parts of JWT are encode in base64 format which are concatenated to form a JWT.
-
-31. How to transmit JSON data securely over the internet?
-The JSON data can be securely transmitted over the internet using the HTTPS (Hyper Text Transfer Protocol Secure) protocol. It encrypts the data during its transmission over the internet.
-
-32. What is JSON-LD and how it is different from JSON?
-JSON-LD stands for JSON for Linking Data. It is a lightweight Linked Data format that is designed to integrate with the JSON based APIs that are already existing on he internet. It is different from regular JSON as it involves the additional context and semantics for the better data interoperability.
-
-33. What is the purpose of toJSON() method in JSON?
-The toJSON() method in JSON is used to convert the date returned by the Date constructor in the string format.
-
-dateObj.toJSON();
-34. What are JSON formatter and Validator?
-The JSON formatter and Validators are the tools used to format and validate the JSON data. These tools convert the JSON data into a human-readable format by ensuring its readability, correctness, and adherence to JSON syntax.
-
-35. What are the alternatives of JSON?
-There are some alternatives available for JSON as listed below:
-
-XML (Extensible Markup Language)
-Protocol Buffers (protobuf)
-YAML
-MessagePack
-BSON (Binary JSON)
-CBOR (Concise Binary Object Representation)
-
-
-### Basic Questions
-
-1. **What is JSON?**
-   - JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is primarily used to transmit data between a server and a web application.
-
-2. **What are the key data types supported by JSON?**
-   - JSON supports the following data types:
-     - Strings
-     - Numbers
-     - Objects
-     - Arrays
-     - Booleans (true/false)
-     - Null
-
-3. **How does JSON differ from XML?**
-   - JSON is more lightweight and easier to read/write compared to XML.
-   - JSON uses a key-value pair structure, while XML uses a tree structure with start and end tags.
-   - JSON does not support comments, whereas XML does.
-   - JSON is native to JavaScript, making it easier to parse and generate in JavaScript environments.
-
-4. **How can you parse JSON data in JavaScript?**
-   - JSON data can be parsed using the `JSON.parse()` method. For example:
-     ```javascript
-     let jsonString = '{"name": "John", "age": 30}';
-     let jsonObj = JSON.parse(jsonString);
-     ```
-
-5. **How can you convert a JavaScript object to a JSON string?**
-   - You can use the `JSON.stringify()` method to convert a JavaScript object to a JSON string. For example:
-     ```javascript
-     let jsonObj = {name: "John", age: 30};
-     let jsonString = JSON.stringify(jsonObj);
-     ```
-
-6. **What are some common use cases for JSON?**
-   - Data interchange between a server and a web application.
-   - Configuration files (e.g., package.json in Node.js).
-   - Storing data in NoSQL databases like MongoDB.
-   - APIs responses from web services.
-
-7. **How do you handle comments in JSON?**
-   - JSON does not support comments. If you need to include comments, you would have to handle them outside of the JSON content or use another method to document the JSON structure.
-
-8. **What is the difference between `JSON.parse()` and `eval()`?**
-   - `JSON.parse()` is specifically designed to parse JSON strings safely, ensuring the string is valid JSON.
-   - `eval()` can execute any JavaScript code, making it less secure as it can run malicious scripts if the input is not controlled.
-
-9. **What are JSONP and its use case?**
-   - JSONP (JSON with Padding) is a technique used to overcome cross-domain issues in web browsers by exploiting the `<script>` tag’s ability to load scripts from different origins. JSONP is often used for making cross-domain requests in a way that allows a page to receive JSON data from a server in a different domain.
-
-10. **How do you validate a JSON string?**
-    - You can use a JSON validator or a try-catch block in JavaScript:
-      ```javascript
-      function isValidJson(jsonString) {
-          try {
-              JSON.parse(jsonString);
-              return true;
-          } catch (e) {
-              return false;
-          }
-      }
-      ```
-
-11. **What is the significance of `Content-Type: application/json` in HTTP headers?**
-    - This HTTP header indicates that the body of the request or response is in JSON format. Servers and clients use this header to parse the data correctly.
-
-12. **Can JSON be used for asynchronous data exchange? How?**
-    - Yes, JSON is commonly used for asynchronous data exchange via AJAX (Asynchronous JavaScript and XML) requests in web applications. It allows the browser to exchange data with the server without reloading the page.
-
-### Practical Questions
-
-13. **Given a JSON object, how would you access nested values?**
-    - You can access nested values using dot notation or bracket notation:
-      ```javascript
-      let data = {
-          "user": {
-              "name": "John",
-              "address": {
-                  "city": "New York"
-              }
-          }
-      };
-      let cityName = data.user.address.city; // "New York"
-      ```
-
-14. **How can you modify a value in a JSON object?**
-    - Modify a value by directly assigning a new value to the desired key:
-      ```javascript
-      let data = {"name": "John", "age": 30};
-      data.age = 31; // Modify age
-      ```
-
-15. **How can you handle large JSON data efficiently?**
-    - Use streaming parsers like JSONStream in Node.js.
-    - Utilize pagination to load data in chunks.
-    - Minimize the JSON structure to reduce payload size.
-
-
-
-### More Theoretical JSON Questions
-
-1. **What are the advantages of using JSON over other data interchange formats?**
-   - **Readability**: JSON is easier to read and write compared to XML.
-   - **Lightweight**: JSON has a more compact and lighter structure.
-   - **Native to JavaScript**: JSON is native to JavaScript, making it easy to parse and generate in JavaScript environments.
-   - **Performance**: Parsing JSON is generally faster than parsing XML.
-   - **Interoperability**: JSON is language-independent and supported by most modern programming languages.
-
-2. **What are the limitations of JSON?**
-   - **Lack of Schema**: JSON does not enforce a schema, which can lead to inconsistent data structures.
-   - **No Comments**: JSON does not support comments, making it harder to annotate or document the data structure.
-   - **Limited Data Types**: JSON supports a limited number of data types (strings, numbers, objects, arrays, booleans, null).
-   - **Security**: If not handled correctly, JSON can be vulnerable to injection attacks.
-
-3. **Explain the structure of a JSON object.**
-   - A JSON object is a collection of key-value pairs enclosed in curly braces `{}`. Each key is a string (enclosed in double quotes), and the value can be a string, number, object, array, boolean, or null.
-   - Example:
-     ```json
-     {
-         "name": "John",
-         "age": 30,
-         "isStudent": false,
-         "address": {
-             "city": "New York",
-             "zipcode": "10001"
-         },
-         "courses": ["Math", "Science"]
-     }
-     ```
-
-4. **What are the differences between JSON objects and JSON arrays?**
-   - **JSON Objects**: Represented as key-value pairs enclosed in `{}`. Each key is a string, and the value can be any valid JSON data type.
-     - Example:
-       ```json
-       {
-           "name": "John",
-           "age": 30
-       }
-       ```
-   - **JSON Arrays**: Represented as ordered lists of values enclosed in `[]`. The values can be of any valid JSON data type.
-     - Example:
-       ```json
-       [
-           "Math",
-           "Science",
-           "History"
-       ]
-       ```
-
-5. **How does JSON handle date and time values?**
-   - JSON does not have a built-in data type for dates. Dates are usually represented as strings in a format that can be understood by both the producer and consumer of the JSON data.
-   - Common formats include ISO 8601:
-     ```json
-     {
-         "date": "2024-06-06T12:00:00Z"
-     }
-     ```
-
-6. **What is JSON Schema and what is its purpose?**
-   - JSON Schema is a specification for defining the structure of JSON data. It provides a way to validate JSON data against a predefined schema, ensuring that the data follows the expected format and constraints.
-   - Purpose:
-     - Validate the structure and data types of JSON data.
-     - Define default values, required fields, and constraints.
-     - Document the structure of JSON data for better understanding and maintenance.
-
-7. **What are some common security concerns when working with JSON?**
-   - **Injection Attacks**: Malicious code can be injected if JSON data is not properly sanitized or validated.
-   - **Cross-Site Scripting (XSS)**: JSON data included in web pages without proper escaping can lead to XSS attacks.
-   - **Data Exposure**: Sensitive data can be exposed if JSON data is not properly secured or encrypted during transmission.
-   - **Denial of Service (DoS)**: Large or deeply nested JSON structures can be used to exhaust resources and cause DoS attacks.
-
-8. **How can you ensure the integrity and authenticity of JSON data?**
-   - **Data Encryption**: Use encryption to protect JSON data during transmission.
-   - **Digital Signatures**: Use digital signatures to verify the authenticity and integrity of JSON data.
-   - **Validation**: Use JSON Schema or similar tools to validate the structure and content of JSON data before processing.
-
-9. **What is JSON-LD and how is it used?**
-   - JSON-LD (JSON for Linking Data) is a method of encoding linked data using JSON. It allows the representation of linked data structures, making it easier to integrate data from different sources and provide context to the data.
-   - Used in:
-     - Enhancing SEO by adding structured data to web pages.
-     - Integrating and linking data across different systems and platforms.
-     - Providing machine-readable context to JSON data for better interoperability.
-
-10. **What is the significance of MIME types `application/json` and `application/ld+json`?**
-    - **application/json**: Indicates that the content being transmitted is in JSON format. It is used in HTTP headers to inform the client or server that the data being sent or received is JSON.
-    - **application/ld+json**: Indicates that the content is JSON-LD, a format for linked data using JSON. It is used to provide context to JSON data, making it easier to link and integrate data across different sources.
-
-11. **How can JSON be used in RESTful web services?**
-    - JSON is commonly used in RESTful web services as a format for request and response payloads. It provides a lightweight and easy-to-parse format for exchanging data between the client and server.
-    - Example:
-      - **Request**: Sending data to the server in JSON format.
-        ```json
-        POST /api/users
-        Content-Type: application/json
-        {
-            "name": "John",
-            "age": 30
-        }
-        ```
-      - **Response**: Receiving data from the server in JSON format.
-        ```json
-        {
-            "id": 1,
-            "name": "John",
-            "age": 30
-        }
-        ```
-
-12. **Explain the concept of "serialization" and "deserialization" in the context of JSON.**
-    - **Serialization**: The process of converting an object or data structure into a JSON string. It allows data to be transmitted or stored as JSON.
-      - Example in JavaScript:
-        ```javascript
-        let jsonObj = {name: "John", age: 30};
-        let jsonString = JSON.stringify(jsonObj);
-        ```
-    - **Deserialization**: The process of converting a JSON string back into an object or data structure. It allows JSON data to be parsed and used in applications.
-      - Example in JavaScript:
-        ```javascript
-        let jsonString = '{"name": "John", "age": 30}';
-        let jsonObj = JSON.parse(jsonString);
-        ```
-
-
+Top AJAX Interview Questions and Answers for 2024
+1. What are the different technologies used in AJAX?
+There is a range of technologies that are used in AJAX, such as HTML, XHTML, CSS, XML, XSLT, JSON, JavaScript, and various other APIs.
+
+2. What is a synchronous request in AJAX?
+There are two types of requests used in AJAX on the basis of request priority. The request that waits for the response from the server after requesting to proceed with the script execution’s next part is called a synchronous request. It is essential to use a synchronous request mechanism in certain cases when it is inevitable. However, it should also be avoided, if possible, in order to make sure the server is highly responsive.
+
+3. What is an asynchronous request in AJAX?
+An asynchronous request in AJAX moves forward with the next line of script execution without waiting for the web server after a request. This can later be handled when the web server sends a response. Since users can interact with web pages without having to wait for the responses from the server, an asynchronous request is considered extremely important as it allows for a prompt response to users without any delay.
+
+4. What are the limitations of AJAX?
+AJAX has certain limitations, which have been listed below-
+
+While AJAX is a preferred choice for websites, it is not recommended to use AJAX for web application development.
+While AJAX has many advantages, the process of developing web pages might be complex and time-consuming.
+Since crawlers fail to identify the web applications developed using AJAX and JavaScript, it is not possible for search engines to index pages that are developed with the help of AJAX.
+Pages developed with the help of AJAX cannot be bookmarked.
+If JavaScript is disabled in a browser, AJAX does not function.
+Since different page controls have different loading times, it results in a slow response time for AJAX.
+5. List AJAX features.
+Here are some of the salient features of AJAX-
+
+It offers high-performing web pages and a range of features that are user-friendly, such as autocomplete suggestions.
+It allows for client-side template rendering.
+With AJAX, users can interact with web pages efficiently without being interrupted by constant reloading of the web pages.
+It is server independent and has a rich user interface.
+It supports live data binding and supports data view control.
+Become a Software Development Professional
+Full Stack Java Developer
+Full Stack Java Developer
+Kickstart Full Stack Java Developer career with industry-aligned curriculum by experts
+Hands-on practice through 20+ projects, assessments, and tests
+6 months
+View Program
+Full Stack Web Developer - MEAN Stack
+Full Stack Web Developer - MEAN Stack
+Comprehensive Blended Learning program
+8X higher interaction in live online classes conducted by industry experts
+11 months
+View Program
+Not sure what you’re looking for?View all Related Programs
+6. What are the security threats with AJAX codes?
+When using AJAX codes, the following are the security threats that a web page may be exposed to-
+
+Since AJAX request calls are in plain format, this may result in insecure access to the database.
+Anyone can view the data retrieved on a web page made using AJAX as the retrieved data is stored on the client browser.
+Web pages made using AJAX might be extremely vulnerable to cyber attacks by hackers as the entire AJAX code is easily visible using the view page source. These codes, when accessed by hackers, can be misused.
+7. What is XMLHttpRequest?
+XMLHttpRequest is an API with various properties and methods that are used by several scripting languages, such as VBScript and JavaScript. These methods are useful for the manipulation and transfer of XML data with the help of HTTP protocol which enables the connection between the client and server.
+
+XMLHttpRequest supports various formats for transferring data, including JSON, XML, plain text, and binary content. With XMLHttpRequest, you can update different parts of a webpage without requiring reloading of the page.
+
+8. What is the AJAX callback function?
+The AJAX callback function has various steps, which start with a request sent by the client browser to the server. However, since the request sent is asynchronous in nature, the user can carry on without having to wait for the server to respond to the request. Once the server receives the message, it processes the page with the AJAX callback and sends the response in the form of a JavaScript code string. This code string then is executed in the browser.
+
+9. What is ScriptManager in ASP.Net?
+ScriptManager in ASP.Net is responsible for managing a variety of AJAX resources, which is why it has a central role to play in AJAX functionalities. Some of the resources managed by ScriptManager are coordinating partial page uploads and downloading the Microsoft AJAX library.
+
+10. What is the difference between ScriptManager and ScriptManagerProxy?
+While ScriptManager is responsible for functionalities that enable the rendering of partial pages and the Microsoft AJAX library, ScriptManagerProxy is responsible for enabling nested components for adding script and service references when a page has ScriptManager control.
+
+11. How can we cancel the current request in AJAX?
+When a user performs an action that results in the setting off of an AJAX request, the current request on AJAX gets canceled.
+
+12. Are XMLHttpRequest and AJAX the same thing?
+No, XMLHttpRequest is a component of the AJAX equation. It is that aspect of AJAX that is responsible for making the asynchronous server communication viable.
+
+13. What is the importance of client-side libraries?
+Similar to the ASP.Net programming model, client-side libraries help with handling issues with browser compatibility and making request calls that are asynchronous in nature over XMLHttp.
+
+14. What is AJAX Control Toolkit?
+AJAX Control Toolkit is useful for the extension of ASP.Net control functionalities. AJAX Control Toolkit makes use of JavaScript codes for enhancing the ASP.Net capabilities and controls. With this control toolkit, you can write extenders and controls that are reusable, customizable, and extensible. And with this, you can create an interactive web experience.
+
+15. When are the AJAX GET and AJAX POST requests used?
+The AJAX GET request and POST request are used in certain scenarios. The AJAX GET request should be used when no change in the data for the given URL is requested. Likewise, HTTP POST should be used for a server’s updated state and for consistent web application architecture.
+
+16. What is an update panel?
+Update panel, which is a server control, finds its applications in updating a certain portion of a web page. Whenever you use the update panel, you also need to use ScriptManager. However, the update panel does not allow handling outside controls.
+
+17. What are the types of triggers present in the update panel?
+The update panel consists of two types of triggers. The PostBackTrigger is used as a full postback and it does not function in an asynchronous manner. The second type of trigger is AsyncPostBacktrigger, which is responsible for partial postback in an asynchronous way.
+
+18. What are the prerequisites for executing AJAX applications on a server?
+Executing the AJAX application simply requires installing Microsoft Visual Studio 2010. However, if you intend to use extenders in your application, you will also need to install AJAX Control Toolkit. Once you have installed the control toolkit, you then have to copy the AjaxControlTookit.dll file to your application’s Bin directory.
+
+19. How can you determine if an AJAX request has been completed?
+To check if an AJAX request has been successfully completed, you need to use the ReadyState property. The request is completed when the property is equal to four.
+
+20. What are the types of postbacks in AJAX?
+There are two types of postbacks in AJAX, which are synchronous postback and asynchronous postback.
+
+21. What are the components of the ASP.Net AJAX client library?
+The AJAX client library comprises three components, which are the component layer, the core services layer, and the browser compatibility layer.
+
+22. What are the goals of AJAX?
+The basic goals of AJAX are to reduce web server hits and network load while providing an interactive user interface. It is also used for neutral platforms and architecture and to offer support for both asynchronous and synchronous communications.
+
+Become a Software Development Professional
+Full Stack Java Developer
+Full Stack Java Developer
+Kickstart Full Stack Java Developer career with industry-aligned curriculum by experts
+Hands-on practice through 20+ projects, assessments, and tests
+6 months
+View Program
+Full Stack Web Developer - MEAN Stack
+Full Stack Web Developer - MEAN Stack
+Comprehensive Blended Learning program
+8X higher interaction in live online classes conducted by industry experts
+11 months
+View Program
+Not sure what you’re looking for?View all Related Programs
+Frequently Asked Questions
+1. What is the main use of AJAX?
+The main use of AJAX is to update web pages. This is made possible through asynchronous exchange of small amounts of data behind the scenes with the server, because of which, updating the web pages without reloading the whole page is made possible.
+
+2. How can you test the AJAX code?
+AJAX codes can be tested with the help of JUnit, which is an open-source testing framework. Before you test your AJAX codes, you need to create test cases.
+
+3. What server supports AJAX?
+All modern-day browsers and servers, such as Google Chrome, Mozilla Firefox, Internet Explorer 5.0 and above, Opera 7.6 and above, Safari 1.2 and above, and Netscape 7.1 and above support AJAX.
+
+4. What are the controls of AJAX?
+The controls of AJAX include ScriptManager, ScriptManagerProxy, Timer, UpdateProgress, and UpdatePanel. 
+
+10) What are the important methods of XMLHttpRequest?
+abort() - It is used to cancel the current request.
+getAllResponseHeaders() - It returns the header details.
+getResponseHeader() - It returns the specific header details.
+open() - It is used to open the request.
+send() - It is used to send the request.
+setRequestHeader() - It adds request header.
+More details.
+11) What are the types of open() method used for XMLHttpRequest?
+open(method, URL) - It opens the request specifying get or post method and URL.
+open(method, URL, async) - It is same as above but specifies asynchronous or not.
+open(method, URL, async, username, password) - It is same as above but specifies the username and password.
+More details.
+12) What are the types of send() method used for XMLHttpRequest?
+send() - It sends get request
+send(string) - It sends post request.
+More details.
+13) What is the role of the callback function in AJAX?
+
+The callback function passes a function as a parameter to another function. If we have to perform various AJAX tasks on a website, then we can create one function for executing XMLHttpRequest and a callback function to execute each AJAX task.
+
+how ajax works, flow of ajax
+14) What is JSON in AJAX?
+
+JSON stands for JavaScript Object Notation. In AJAX, it is used to exchange data between a browser and a server. It is easy to understand, and data exchange is faster than XML. It supports array, object, string, number, and values.
+
+request.onreadystatechange  = function(){    
+      if (request.readyState == 4  )    
+      {    
+        var jsonObj = JSON.parse(request.responseText);//JSON.parse() returns JSON object    
+        document.getElementById("date").innerHTML =  jsonObj.date;    
+        document.getElementById("time").innerHTML = jsonObj.time;    
+      }    
+   }  
+15) What are the tools for debugging AJAX applications?
+
+ADVERTISEMENT
+
+There are several tools for debugging AJAX applications.
+
+Firebug for Mozilla Firefox
+Fiddler for IE (Internet Explorer)
+JavaScript HTML Debugger
+MyEclipse AJAX Tools
+Script Debugger
+16) What are the types of post back in AJAX?
+
+There are two types of post back in AJAX.
+
+Synchronous Postback - It blocks the client until the operation completes.
+how synchronous request works
+Asynchronous Postback - It doesn?t block the client.
+how asynchronous request works
+17) What are the different ready states of a request in AJAX?
+
+There are 5 ready states of a request in AJAX.
+
+0 means UNOPENED
+1 means OPENED
+2 means HEADERS_RECEIVED
+3 means LOADING
+4 means DONE
